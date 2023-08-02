@@ -2,7 +2,8 @@ import axios from "axios";
 import Cookies from 'js-cookie';
 
 const axiosInstance = axios.create({
-  baseURL: "https://03sxynnn7l.execute-api.us-east-1.amazonaws.com/prod/api/v1/", // Your API base URL
+  // baseURL: "https://e4iddh81m6.execute-api.us-east-1.amazonaws.com/dev/api/v1/", // Your API base URL
+  baseURL:"https://mwusgznmod.execute-api.us-east-1.amazonaws.com/dev/api/v1/"
 });
 
 axiosInstance.interceptors.response.use(

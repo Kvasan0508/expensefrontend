@@ -12,7 +12,7 @@ function Expense() {
   });
   const [expenses, setExpenses] = useState([]);
   const navigate = useNavigate()
-const baseUrl='http://localhost:8000/api/v1/'
+const baseUrl='https://mwusgznmod.execute-api.us-east-1.amazonaws.com/dev/api/v1/'
   const addAmount = async () => {
     setTotalAmount(totalAmount + amount);
     setAmount(0);
@@ -115,7 +115,7 @@ const baseUrl='http://localhost:8000/api/v1/'
         </div>
       </div>
 
-      <div className="flex justify-center items-center w-full h-[100vh]">
+      <div className="flex justify-center items-center w-full h-auto min-h-[100vh]">
         <div className=" w-[90%] lg:w-[50%] p-5 lg:min-h-[400px] min-h-[80%] h-auto relative bg-[#f5f5f5]">
           <div className="w-full grid grid-cols-1 gap-4">
             <div className="w-full mt-5 border flex  justify-start pl-4 items-center border-slate-400 h-[50px]  mx-auto">
@@ -129,6 +129,7 @@ const baseUrl='http://localhost:8000/api/v1/'
                 {" "}
                 <TextField
                   fullWidth
+                  type="number"
                   label="Add Amount"
                   value={amount}
                   onChange={(e) => setAmount(Number(e.target.value))}
@@ -160,6 +161,8 @@ const baseUrl='http://localhost:8000/api/v1/'
                 <div className="w-[80%]">
                   {" "}
                   <TextField
+                                    type="number"
+
                     value={expense.expenseAmount}
                     onChange={(e) => {
                       console.log(e)
